@@ -9,7 +9,7 @@ function Computers(props) {
   });
 
   return (
-    <div className="body">
+    <div>
       {filteredProducts.map((product) => {
         return (
           <ProductCard

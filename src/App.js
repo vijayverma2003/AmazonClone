@@ -1,12 +1,12 @@
 import "bootstrap/dist/css/bootstrap.css";
+import "./App.css";
 import "../src/styles/carousel.css";
 import "../src/styles/homePageGrids.css";
+import "../src/styles/productsPage.css";
 import "../src/styles/productCard.css";
-import "./App.css";
 
-import HomePage from "../src/components/HomePage/HomePage";
-import Televisions from "./components/categories/Televisions";
 import Computers from "./components/categories/Computers";
+import HomePage from "./components/HomePage/HomePage";
 
 function App() {
   return (

@@ -7,7 +7,7 @@ function ProductCard({ title, price, listPrice, stock, imageUrl, id }) {
       <div className="product-image">
         <img src={imageUrl} alt="" />
       </div>
-      <div className="product-card-body fs-4">
+      <div className="product-card-body fontsize-4">
         <Link className="product-card-title" to={`/product/${id}`}>
           {title}
         </Link>

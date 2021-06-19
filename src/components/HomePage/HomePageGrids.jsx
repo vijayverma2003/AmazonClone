@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../styles/homePageGrids.css";
 
 function HomePageGrids() {
   return (
@@ -130,7 +129,7 @@ function HomePageGrids() {
                   alt=""
                 />
                 <div className="link-container">
-                  <Link className="btn primary-link" to="/computers">
+                  <Link className="btn btn-link" to="/computers">
                     Computer & Accessories
                   </Link>
                 </div>
@@ -142,7 +141,7 @@ function HomePageGrids() {
                   alt=""
                 />
                 <div className="link-container">
-                  <button className="btn primary-link">Video Games</button>
+                  <button className="btn btn-link">Video Games</button>
                 </div>
               </div>
               <div>
@@ -152,7 +151,7 @@ function HomePageGrids() {
                   alt=""
                 />
                 <div className="link-container">
-                  <button className="btn primary-link">Baby</button>
+                  <button className="btn btn-link">Baby</button>
                 </div>
               </div>
               <div>
@@ -163,7 +162,7 @@ function HomePageGrids() {
                 />
                 <div className="link-container">
                   <div className="link-container">
-                    <button className="btn primary-link">Toys and Games</button>
+                    <button className="btn btn-link">Toys and Games</button>
                   </div>
                 </div>
               </div>

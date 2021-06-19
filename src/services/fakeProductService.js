@@ -190,5 +190,5 @@ export function Products() {
 }
 
 export function getProduct(id) {
-  return products.filter((p) => p._id === id);
+  return products.find((p) => p._id === id);
 }

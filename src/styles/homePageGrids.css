@@ -1,0 +1,65 @@
+.home-grid {
+  position: absolute;
+  top: 30rem;
+  backdrop-filter: blur(50px);
+}
+
+.grid {
+  display: grid;
+  padding: 5rem 2rem;
+}
+
+.grid-2x4 {
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-2x2 {
+  padding: 0;
+  grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+  gap: 5px;
+  height: 304px;
+}
+
+/* Cards */
+
+.card {
+  background-color: white;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header-primary {
+  background-color: white;
+}
+
+.card-body-primary,
+.small-card-body-primary {
+  margin: 2rem 0;
+}
+
+.small-card-body-primary {
+  height: 304px;
+}
+
+.card-body-primary img {
+  object-fit: cover;
+  height: 304px;
+}
+
+.small-image {
+  width: 85px;
+  height: 85px;
+  margin: 0 25px;
+}
+
+.small-image-2 {
+  height: 85px;
+}
+
+.photo-shipping {
+  width: 350px;
+  padding: 2rem;
+}

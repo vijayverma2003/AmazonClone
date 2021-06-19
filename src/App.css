@@ -1,38 +1,111 @@
-.App {
+html {
+  font-size: 62.5%;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+body {
+  /* background-color: rgba(0, 0, 0, 0.05); */
+  background-color: pink;
+}
+
+img {
+  width: 100%;
+}
+
+td,
+thead th {
+  font-size: 1.8rem;
+  max-width: 100%;
+}
+
+/* Typography */
+h2 {
+  font-size: 2.1rem;
+  font-weight: 400;
+  line-height: 31.5px;
+  margin: 0;
+}
+
+.bolder {
+  font-weight: 700;
+}
+
+p {
+  font-size: 1.3rem;
+}
+
+.fs-4 {
+  font-size: 1.8rem;
+}
+
+.zero-padding {
+  padding: 0;
+}
+
+/* Buttons */
+.btn {
+  outline: 0;
+  cursor: pointer;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  border-radius: 5px;
+}
+
+.btn-link {
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #007185;
+  border: none;
+  text-align: left;
+  background-color: white;
+}
+
+.btn-link:hover {
+  color: #c7511f;
+  text-decoration: underline;
+}
+
+.btn-primary {
+  color: black;
+  border: solid 1px #846a29;
+  background-image: linear-gradient(to bottom, #f7dfa5, #f0c14b);
+}
+
+.btn-primary:focus {
+  box-shadow: 0 0 2px 2px orange;
+}
+
+.btn-primary:hover {
+  background-image: linear-gradient(to bottom, #f7dfa5, #f0c14b 10%);
+}
+
+/* Links */
+
+.link-container {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.primary-link {
+  padding: 0;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: black;
+  border: none;
+  text-align: center;
+  background-color: white;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.primary-link:hover {
+  color: black;
 }

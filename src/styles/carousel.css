@@ -1,0 +1,45 @@
+/* SlideShow */
+
+.slide {
+  height: fit-content;
+  cursor: pointer;
+  transition: all 1s ease-in-out;
+}
+.slide {
+  -webkit-animation-name: slide;
+  -webkit-animation-duration: 1.5s;
+  animation-name: slide;
+  animation-duration: 240ms;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(800px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.slideshow-photo {
+  width: 100%;
+}
+
+.next {
+  display: inline-block;
+  position: absolute;
+  top: 12rem;
+  right: 1rem;
+  cursor: pointer;
+  font-size: 4rem;
+  padding: 0 1rem 0 2rem;
+}
+
+.previous {
+  position: absolute;
+  top: 12rem;
+  left: 1rem;
+  cursor: pointer;
+  font-size: 4rem;
+  padding: 0 2rem 0 1rem;
+}

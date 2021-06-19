@@ -6,6 +6,6 @@ const imageUrls = [
   "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Hero/Fuji_TallHero_Computers_2x._CB432469748_.jpg",
 ];
 
-export function getCarausels() {
+export function getCarousels() {
   return imageUrls;
 }

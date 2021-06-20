@@ -35,7 +35,7 @@ function Carousel() {
     <div className="app">
       <div className="slideshow">
         {carousels.map((imageUrl) => (
-          <button className="slide btn-link zero-padding">
+          <button key={imageUrl} className="slide btn-link zero-padding">
             <img src={imageUrl} alt="" className="slideshow-photo" />
           </button>
         ))}

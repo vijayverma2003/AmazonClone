@@ -1,0 +1,48 @@
+/* NavBar */
+:root {
+  --color-primary: #131921;
+  --color-secondary: #f08804;
+}
+
+.navbar {
+  background-color: var(--color-primary);
+  height: 60px;
+}
+
+.nav-logo {
+  content: url("../media/Amazonlogo.png");
+  width: 113px;
+  height: 58px;
+  object-fit: contain;
+  padding: 1px 8px 0 6px;
+  margin: 0 0 0 11px;
+}
+
+.shopping-cart {
+  height: 50px;
+  width: 84px;
+  margin-bottom: 8px;
+}
+
+.cart-icon {
+  content: url("../media/cart.png");
+  height: 56px;
+  margin-right: 20px;
+}
+
+.cart-text {
+  color: white;
+  position: relative;
+  bottom: 29px;
+  left: 49px;
+  font-weight: 900;
+}
+
+.cart-quantity {
+  color: var(--color-secondary);
+  font-weight: 900;
+  font-size: 1.5rem;
+  position: relative;
+  bottom: 79px;
+  left: 28px;
+}

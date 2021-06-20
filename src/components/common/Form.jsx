@@ -56,7 +56,7 @@ class Form extends Component {
         onClick={this.handleSubmit}
         className="form_button "
       >
-        Sign-In
+        {label}
       </button>
     );
   }

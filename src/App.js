@@ -6,6 +6,7 @@ import "../src/styles/productsPage.css";
 import "../src/styles/productCard.css";
 import "../src/styles/navbar.css";
 import "../src/styles/cartPage.css";
+import "../src/styles/forms.css";
 
 import { useState } from "react";
 import { Route, Switch } from "react-router-dom";
@@ -17,6 +18,7 @@ import HomePage from "./components/HomePage/HomePage";
 import Navbar from "./components/Navbar";
 import ProductPage from "./components/Pages/ProductPage";
 import Televisions from "./components/categories/Televisions";
+import LoginPage from "./components/Pages/LoginPage";
 
 function App() {
   // Quantity in cart
@@ -27,6 +29,7 @@ function App() {
       <CartContext.Provider value={{ quantity, setQuantity }}>
         <Navbar />
         <Switch>
+          <Route path="/login" component={LoginPage} />
           <Route path="/cart" component={Cart} />
           <Route path="/product/:id" component={ProductPage} />
           <Route path="/televisions" component={Televisions} />

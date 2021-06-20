@@ -1,15 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import { getProduct } from "../../services/fakeProductService";
 import { Link } from "react-router-dom";
+import CartContext from "../../context/CartContext";
 
 function ProductPage(props) {
   //   const productId = props.match.params.id;
   const product = getProduct(1);
+  const { quantity, setQuantity } = useContext(CartContext);
 
   const savingsInDollars = product.listPrice - product.price;
   const saving =
     ((product.listPrice - product.price) * 100) / product.listPrice;
   const savingInPercentage = saving.toFixed(1);
+
+  const handleAdd = (product) => {
+    // const quantity = product.quantity;
+    product.quantityInCart++;
+    setQuantity(quantity + 1);
+  };
 
   return (
     <div className="product-page-grid">
@@ -35,7 +43,7 @@ function ProductPage(props) {
         </div>
         <Link to="/cart">
           <button
-            onClick={() => console.log(product)}
+            onClick={() => handleAdd(product)}
             className="btn-secondary"
             disabled={product.stock > 0 ? false : true}
           >

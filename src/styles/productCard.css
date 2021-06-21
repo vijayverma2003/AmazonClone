@@ -3,7 +3,7 @@
 .grid-product-card {
   display: grid;
   grid-template-columns: auto 780px;
-  width: 1048px;
+  max-width: 1048px;
   gap: 0 4rem;
   margin: 0 auto;
   border-bottom: 1px solid rgba(0, 0, 0, 0.164);

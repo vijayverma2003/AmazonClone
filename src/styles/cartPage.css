@@ -5,7 +5,7 @@
 .cart-box {
   margin: 5rem auto;
   padding: 3rem;
-  min-width: 1048px;
+  max-width: 1048px;
   background-color: white;
 }
 

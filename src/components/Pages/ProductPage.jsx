@@ -2,16 +2,16 @@ import React, { useContext } from "react";
 import { getProduct } from "../../services/fakeProductService";
 import { Link } from "react-router-dom";
 import CartContext from "../../context/CartContext";
+import savings from "../../services/productPage";
 
 function ProductPage(props) {
   const productId = props.match.params.id;
   const product = getProduct(productId);
   const { quantity, setQuantity } = useContext(CartContext);
 
-  const savingsInDollars = (product.listPrice - product.price).toFixed(2);
-  const saving =
-    ((product.listPrice - product.price) * 100) / product.listPrice;
-  const savingInPercentage = saving.toFixed(1);
+  const savingsInDollars = savings.savingInDollars(product);
+  const saving = savings.saving(product);
+  const savingInPercentage = savings.savingInPercentage(saving);
 
   const handleAdd = (product) => {
     product.quantityInCart++;
@@ -40,6 +40,9 @@ function ProductPage(props) {
             ${savingsInDollars} ({savingInPercentage}%)
           </span>
         </div>
+        {product.stock === 0 ? (
+          <div className="product-savings">Out of Stock</div>
+        ) : null}
         <Link to="/cart">
           <button
             onClick={() => handleAdd(product)}

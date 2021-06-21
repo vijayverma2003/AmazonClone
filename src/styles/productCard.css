@@ -11,6 +11,12 @@
   padding: 2rem;
 }
 
+@media screen and (max-width: 1240px) {
+  .grid-product-card {
+    grid-template-columns: 50% 50%;
+  }
+}
+
 .product-image {
   margin: auto;
   width: 200px;
@@ -26,6 +32,8 @@
   color: black;
   font-weight: 500;
   cursor: pointer;
+  height: 48px;
+  overflow: hidden;
 }
 
 .product-card-title:hover {

@@ -15,7 +15,7 @@ function CartProduct({ product, onCheckChange }) {
           <img src={product.imageUrl} alt="" className="cart_item-image" />
           <div className="cart_body">
             <Link to={`/product/${product._id}`} className="cart_item-title">
-              {product.title}
+              <div className="text-container">{product.title}</div>
             </Link>
             {product.stock === 0 ? (
               <div className="cart_stock-out">Out of Stock</div>

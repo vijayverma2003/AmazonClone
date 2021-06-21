@@ -14,6 +14,11 @@ class RegisterPage extends Form {
     navbar.style.display = "none";
   }
 
+  componentWillUnmount() {
+    const navbar = document.querySelector(".navbar");
+    navbar.style.display = "flex";
+  }
+
   schema = {
     name: Joi.string().required().label("Name"),
     email: Joi.string().email().required().label("Email"),

@@ -13,6 +13,11 @@ class LoginPage extends Form {
     navbar.style.display = "none";
   }
 
+  componentWillUnmount() {
+    const navbar = document.querySelector(".navbar");
+    navbar.style.display = "flex";
+  }
+
   schema = {
     email: Joi.string().email().required().label("Email"),
     password: Joi.string().required().label("Password"),

@@ -6,9 +6,9 @@ function CartIcon() {
   const { quantity } = useContext(CartContext);
   return (
     <Link to="/cart" className="shopping-cart">
-      <div className="cart-icon"></div>
+      <span className="cart-icon"></span>
       <p className="cart-text">Cart</p>
-      <div className="cart-quantity">{quantity}</div>
+      <span className="cart-quantity">{quantity}</span>
     </Link>
   );
 }

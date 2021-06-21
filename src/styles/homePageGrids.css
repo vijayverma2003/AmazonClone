@@ -19,7 +19,19 @@
   padding: 0;
   grid-template: repeat(2, 1fr) / repeat(2, 1fr);
   gap: 5px;
-  height: 304px;
+  /* height: 304px; */
+}
+
+@media screen and (max-width: 1240px) {
+  .grid-2x4 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .grid-2x4 {
+    grid-template-columns: 33% 33% 33%;
+  }
 }
 
 /* Cards */
@@ -29,6 +41,10 @@
   padding: 2rem;
   display: flex;
   flex-direction: column;
+}
+
+.card-secondary {
+  display: none;
 }
 
 .card-header-primary {
@@ -60,6 +76,22 @@
 }
 
 .photo-shipping {
-  width: 350px;
+  max-width: 350px;
   padding: 2rem;
+}
+
+@media screen and (max-width: 1240px) {
+  .card-secondary {
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .card {
+    width: 320px;
+  }
+
+  .card-secondary {
+    display: none;
+  }
 }

@@ -176,6 +176,64 @@ function HomePageGrids() {
             </Link>
           </footer>
         </div>
+        <div className="card card-secondary">
+          <header>
+            <h2 className="bolder">Gaming Accessories</h2>
+          </header>
+          <div className="small-card-body-primary">
+            <div className="grid grid-2x2">
+              <div>
+                <img
+                  className="small-image-2"
+                  src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2021/June/Fuji_Quad_Headset_2x._SY232_CB667159060_.jpg"
+                  alt=""
+                />
+                <div className="link-container">
+                  <Link className="btn btn-link" to="/computers">
+                    Headsets
+                  </Link>
+                </div>
+              </div>
+              <div>
+                <img
+                  className="small-image-2"
+                  src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2021/June/Fuji_Quad_Keyboard_2x._SY232_CB667159063_.jpg"
+                  alt=""
+                />
+                <div className="link-container">
+                  <button className="btn btn-link">KeyBoards</button>
+                </div>
+              </div>
+              <div>
+                <img
+                  className="small-image-2"
+                  src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2021/June/Fuji_Quad_Mouse_2x._SY232_CB667159063_.jpg"
+                  alt=""
+                />
+                <div className="link-container">
+                  <button className="btn btn-link">Mice</button>
+                </div>
+              </div>
+              <div>
+                <img
+                  className="small-image-2"
+                  src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2021/June/Fuji_Quad_Chair_2x._SY232_CB667159060_.jpg"
+                  alt=""
+                />
+                <div className="link-container">
+                  <div className="link-container">
+                    <button className="btn btn-link">Chairs</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <footer>
+            <Link className="btn btn-link" to="/tv">
+              See More
+            </Link>
+          </footer>
+        </div>
       </div>
     </div>
   );

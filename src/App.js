@@ -20,6 +20,7 @@ import ProductPage from "./components/Pages/ProductPage";
 import Televisions from "./components/categories/Televisions";
 import LoginPage from "./components/Pages/LoginPage";
 import RegisterPage from "./components/Pages/RegisterPage";
+import BeautyPicks from "./components/categories/BeautyPicks";
 
 function App() {
   // Quantity in cart
@@ -34,6 +35,7 @@ function App() {
           <Route path="/login" component={LoginPage} />
           <Route path="/cart" component={Cart} />
           <Route path="/product/:id" component={ProductPage} />
+          <Route path="/beauty" component={BeautyPicks} />
           <Route path="/tv" component={Televisions} />
           <Route path="/computers" component={Computers} />
           <Route exact path="/" component={HomePage} />

@@ -14,7 +14,7 @@ function CartProduct({ product, onCheckChange }) {
         <div className="cart-grid cart-grid-1x3">
           <img src={product.imageUrl} alt="" className="cart_item-image" />
           <div className="cart_body">
-            <Link to="" className="cart_item-title">
+            <Link to={`/product/${product._id}`} className="cart_item-title">
               {product.title}
             </Link>
             {product.stock === 0 ? (

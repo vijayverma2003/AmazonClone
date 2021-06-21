@@ -16,7 +16,7 @@ function HomePageGrids() {
             />
           </div>
           <footer>
-            <Link className="btn btn-link" to="/tv">
+            <Link className="btn btn-link" to="/beauty">
               Shop Now
             </Link>
           </footer>
@@ -59,7 +59,9 @@ function HomePageGrids() {
               <h2 className="bolder">Sign in for best Experience</h2>
             </header>
             <div className="card-body-primary">
-              <button className="btn btn-primary">Sign in securely</button>
+              <Link to="/login" className="btn btn-primary">
+                Sign in securely
+              </Link>
             </div>
           </div>
           <img

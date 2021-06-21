@@ -34,7 +34,7 @@ function App() {
           <Route path="/login" component={LoginPage} />
           <Route path="/cart" component={Cart} />
           <Route path="/product/:id" component={ProductPage} />
-          <Route path="/televisions" component={Televisions} />
+          <Route path="/tv" component={Televisions} />
           <Route path="/computers" component={Computers} />
           <Route exact path="/" component={HomePage} />
         </Switch>

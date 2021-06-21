@@ -13,7 +13,7 @@
 
 const products = [
   {
-    _id: 1,
+    _id: "1",
     label: "Microsoft Surface Pro 7",
     title: `Microsoft Surface Pro 7 – 12.3" Touch-Screen - 10th Gen Intel Core i5 - 8GB Memory - 128GB SSD (Latest Model) – Platinum (VDV-00001)`,
     price: 684.14,
@@ -33,7 +33,7 @@ const products = [
     tags: ["microsoft", "Surface 4 pro", "surface", "laptops"],
   },
   {
-    _id: 2,
+    _id: "2",
     label: "Portable Neck Fan",
     title:
       "JISULIFE Portable Neck Fan, Hands Free Bladeless Fan, 4000 mAh Battery Operated Wearable Personal Fan, Leafless, Rechargeable, Headphone Design, USB Powered Desk Fan,3 Speeds-Dark Green",
@@ -43,11 +43,11 @@ const products = [
     listPrice: 45.99,
     stock: 20,
     category: { _id: "c1", name: "Computers" },
-
+    description: [],
     quantityInCart: 1,
   },
   {
-    _id: 3,
+    _id: "3",
     label: "Creative Pebble Speakers",
     title:
       "Creative Pebble 2.0 USB-Powered Desktop Speakers with Far-Field Drivers and Passive Radiators for Pcs and Laptops (Black)",
@@ -56,43 +56,43 @@ const products = [
     price: 19.99,
     listPrice: "24.99",
     stock: 0,
-
+    description: [],
     quantity: 0,
     category: { _id: "c1", name: "Computers" },
   },
 
   {
-    _id: 4,
+    _id: "4",
     label: "LEGO Star Wars B-Wing Starfighter",
     price: "686.99",
     category: { _id: "c2", name: "Baby" },
   },
   {
-    _id: 5,
+    _id: "5",
     label: "VTech Pull and Sing Puppy",
     price: "11.72",
     category: { _id: "c2", name: "Baby" },
   },
   {
-    _id: 6,
+    _id: "6",
     label: "Regalo Swing Down 54-Inch Extra Long Bed Rail Guardy",
     price: "34.99",
     category: { _id: "c2", name: "Baby" },
   },
   {
-    _id: 7,
+    _id: "7",
     label: "Xiaomi Mi Band 5 Smart Wristband",
     price: "30.85",
     category: { _id: "c3", name: "Fitness" },
   },
   {
-    _id: 8,
+    _id: "8",
     label: "Yoga Mat",
     price: "25.38",
     category: { _id: "c3", name: "Fitness" },
   },
   {
-    _id: 9,
+    _id: "9",
     label: "BlenderBottle Shaker Bottle Pro",
     price: "8.99",
     category: { _id: "c3", name: "Fitness" },
@@ -170,13 +170,14 @@ const products = [
     category: { _id: "c7", name: "AmazonBasics" },
   },
   {
-    _id: 22,
+    _id: "22",
     label: "TCL 85-inch Class 4-Series 4K UHD HDR Smart Roku TV",
     title:
       "TCL 50-inch Class 4-Series 4K UHD Smart Roku LED TV - 50S435, 2021 Model",
     imageUrl: "https://m.media-amazon.com/images/I/718Av6jK4TS._AC_SX679_.jpg",
     price: "1599.99",
     listPrice: "2689.89",
+    description: [],
     category: { _id: "c8", name: "TV" },
     stock: {
       inStock: true,

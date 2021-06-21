@@ -4,17 +4,16 @@ import { Link } from "react-router-dom";
 import CartContext from "../../context/CartContext";
 
 function ProductPage(props) {
-  //   const productId = props.match.params.id;
-  const product = getProduct(1);
+  const productId = props.match.params.id;
+  const product = getProduct(productId);
   const { quantity, setQuantity } = useContext(CartContext);
 
-  const savingsInDollars = product.listPrice - product.price;
+  const savingsInDollars = (product.listPrice - product.price).toFixed(2);
   const saving =
     ((product.listPrice - product.price) * 100) / product.listPrice;
   const savingInPercentage = saving.toFixed(1);
 
   const handleAdd = (product) => {
-    // const quantity = product.quantity;
     product.quantityInCart++;
     setQuantity(quantity + 1);
   };

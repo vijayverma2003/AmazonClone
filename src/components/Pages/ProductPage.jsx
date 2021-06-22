@@ -3,6 +3,7 @@ import { getProduct } from "../../services/fakeProductService";
 import { Link } from "react-router-dom";
 import CartContext from "../../context/CartContext";
 import savings from "../../services/productPage";
+import "../../styles/productsPage.css";
 
 function ProductPage(props) {
   const productId = props.match.params.id;

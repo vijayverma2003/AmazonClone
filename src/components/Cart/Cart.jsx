@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Products } from "../../services/fakeProductService";
 import CartProduct from "./CartProduct";
+import "../../styles/cartPage.css";
 
 function Cart() {
   const [products] = useState(Products);

@@ -1,7 +1,7 @@
 import React from "react";
 import Joi from "joi-browser";
-import Input from "../common/Input";
 import Form from "../common/Form";
+import "../../styles/forms.css";
 
 class RegisterPage extends Form {
   state = {

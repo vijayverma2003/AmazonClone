@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "@fortawesome/fontawesome-free/css/all.css";
+import "../../styles/carousel.css";
 
 import { getCarousels } from "../../services/carousel";
 

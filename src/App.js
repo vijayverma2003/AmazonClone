@@ -1,13 +1,5 @@
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
-import "../src/styles/carousel.css";
-import "../src/styles/homePageGrids.css";
-import "../src/styles/productsPage.css";
-import "../src/styles/productCard.css";
-import "../src/styles/navbar.css";
-import "../src/styles/cartPage.css";
-import "../src/styles/forms.css";
-import "../src/styles/checkout.css";
 
 import { useState } from "react";
 import { Route, Switch } from "react-router-dom";

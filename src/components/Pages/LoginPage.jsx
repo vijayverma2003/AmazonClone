@@ -1,6 +1,7 @@
 import React from "react";
 import Joi from "joi-browser";
 import Form from "../common/Form";
+import "../../styles/forms.css";
 
 class LoginPage extends Form {
   state = {

@@ -1,6 +1,7 @@
 import React from "react";
 import CartIcon from "./Cart/CartIcon";
 import { Link } from "react-router-dom";
+import "../styles/navbar.css";
 
 function Navbar() {
   return (

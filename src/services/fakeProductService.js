@@ -22,7 +22,7 @@ const products = [
       "https://images-na.ssl-images-amazon.com/images/I/71kBlSKi3eL._AC_SX679_.jpghttps://images-na.ssl-images-amazon.com/images/I/71kBlSKi3eL._AC_SX679_.jpg",
     category: { _id: "c1", name: "Computers" },
     stock: 6,
-    quantityInCart: 1,
+    quantityInCart: 0,
     description: [
       `Next-gen, best-in-class laptop with the versatility of a studio and tablet, so you can type, touch, draw, write, work, and play more naturally`,
       `Faster than Surface Pro 6, with a 10th Gen Intel Core Processor – redefining what’s possible in a thin and light computer. Wireless : Wi-Fi 6: 802.11ax compatible. Bluetooth Wireless 5.0 technology`,
@@ -44,7 +44,7 @@ const products = [
     stock: 20,
     category: { _id: "c1", name: "Computers" },
     description: [],
-    quantityInCart: 1,
+    quantityInCart: 0,
   },
   {
     _id: "3",
@@ -55,9 +55,9 @@ const products = [
       "https://images-na.ssl-images-amazon.com/images/I/51MGXkzK1iL._AC_SX679_.jpg",
     price: 19.99,
     listPrice: "24.99",
-    stock: 0,
+    stock: 2,
     description: [],
-    quantity: 0,
+    quantityInCart: 0,
     category: { _id: "c1", name: "Computers" },
   },
 

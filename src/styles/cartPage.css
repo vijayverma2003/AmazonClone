@@ -127,6 +127,17 @@
   overflow: hidden;
 }
 
+.checkout-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-checkout {
+  width: 100px;
+  margin: 10px;
+}
+
 @media screen and (max-width: 1000px) {
   .cart_body {
     width: 550px;

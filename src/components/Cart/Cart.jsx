@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Products } from "../../services/fakeProductService";
 import CartProduct from "./CartProduct";
@@ -8,6 +8,7 @@ function Cart() {
   const [cartProducts, setCartProducts] = useState([]);
 
   let totalPrice = 0;
+  let totalQuantity = 0;
 
   let filteredProducts = products.filter((p) => p.quantityInCart > 0);
 
@@ -27,6 +28,11 @@ function Cart() {
   cartProducts.map((product) => {
     totalPrice += product.price;
     return totalPrice;
+  });
+
+  cartProducts.map((product) => {
+    totalQuantity += product.quantityInCart;
+    return totalQuantity;
   });
 
   if (filteredProducts.length === 0) {
@@ -76,11 +82,19 @@ function Cart() {
             <span className="subtotal">No items selected</span>
           ) : (
             <span className="subtotal">
-              Subtotal ({cartProducts.length} Items) :
+              Subtotal ({totalQuantity} Items) :
               <span className="subtotal-price"> ${totalPrice} </span>
             </span>
           )}
         </footer>
+      </div>
+      <div className="cart-box checkout-box">
+        <div>
+          <div className="subtotal">Checkout for Products</div>
+        </div>
+        <Link to="/checkout" className="btn btn-tertiary btn-checkout">
+          Checkout{" "}
+        </Link>
       </div>
     </div>
   );

@@ -7,6 +7,7 @@ import "../src/styles/productCard.css";
 import "../src/styles/navbar.css";
 import "../src/styles/cartPage.css";
 import "../src/styles/forms.css";
+import "../src/styles/checkout.css";
 
 import { useState } from "react";
 import { Route, Switch } from "react-router-dom";
@@ -21,6 +22,7 @@ import Televisions from "./components/categories/Televisions";
 import LoginPage from "./components/Pages/LoginPage";
 import RegisterPage from "./components/Pages/RegisterPage";
 import BeautyPicks from "./components/categories/BeautyPicks";
+import Checkout from "./components/Pages/Checkout";
 
 function App() {
   // Quantity in cart
@@ -31,6 +33,7 @@ function App() {
       <CartContext.Provider value={{ quantity, setQuantity }}>
         <Navbar />
         <Switch>
+          <Route path="/checkout" component={Checkout} />
           <Route path="/register" component={RegisterPage} />
           <Route path="/login" component={LoginPage} />
           <Route path="/cart" component={Cart} />

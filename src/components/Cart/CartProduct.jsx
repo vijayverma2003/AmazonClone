@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function CartProduct({ product, onCheckChange }) {
+  const totalPrice = product.quantityInCart * product.price;
   return (
     <div key={product._id} className="cart-grid cart-grid-1x2">
       <input
@@ -24,7 +25,7 @@ function CartProduct({ product, onCheckChange }) {
             )}
             <div className="quantity">Quantity: {product.quantityInCart}</div>
           </div>
-          <div className="cart-price">${product.price}</div>
+          <div className="cart-price">${totalPrice}</div>
         </div>
       </label>
     </div>

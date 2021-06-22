@@ -31,7 +31,7 @@ function Cart() {
   };
 
   cartProducts.map((product) => {
-    totalPrice += product.price;
+    totalPrice += product.price * product.quantityInCart;
     return totalPrice;
   });
 

@@ -17,32 +17,33 @@ import BeautyPicks from "./components/categories/BeautyPicks";
 import Checkout from "./components/Pages/Checkout";
 import SearchPage from "./components/Pages/SearchPage";
 import SearchContext from "./context/SearchContext";
+import Bugsnag from "@bugsnag/js";
 
 function App() {
   // Quantity in cart
   const [quantity, setQuantity] = useState(0);
   const [searchQuery, setSearchQuery] = useState("");
 
+  Bugsnag.notify("Test error message");
+
   return (
-    <div>
-      <SearchContext.Provider value={{ searchQuery, setSearchQuery }}>
-        <CartContext.Provider value={{ quantity, setQuantity }}>
-          <Navbar />
-          <Switch>
-            <Route path="/search" component={SearchPage} />
-            <Route path="/checkout" component={Checkout} />
-            <Route path="/register" component={RegisterPage} />
-            <Route path="/login" component={LoginPage} />
-            <Route path="/cart" component={Cart} />
-            <Route path="/product/:id" component={ProductPage} />
-            <Route path="/beauty" component={BeautyPicks} />
-            <Route path="/tv" component={Televisions} />
-            <Route path="/computers" component={Computers} />
-            <Route exact path="/" component={HomePage} />
-          </Switch>
-        </CartContext.Provider>
-      </SearchContext.Provider>
-    </div>
+    <SearchContext.Provider value={{ searchQuery, setSearchQuery }}>
+      <CartContext.Provider value={{ quantity, setQuantity }}>
+        <Navbar />
+        <Switch>
+          <Route path="/search" component={SearchPage} />
+          <Route path="/checkout" component={Checkout} />
+          <Route path="/register" component={RegisterPage} />
+          <Route path="/login" component={LoginPage} />
+          <Route path="/cart" component={Cart} />
+          <Route path="/product/:id" component={ProductPage} />
+          <Route path="/beauty" component={BeautyPicks} />
+          <Route path="/tv" component={Televisions} />
+          <Route path="/computers" component={Computers} />
+          <Route exact path="/" component={HomePage} />
+        </Switch>
+      </CartContext.Provider>
+    </SearchContext.Provider>
   );
 }
 

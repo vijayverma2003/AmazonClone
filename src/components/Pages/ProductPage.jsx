@@ -63,11 +63,12 @@ function ProductPage(props) {
           </button>
         </Link>
         <div className="product-description-list">
-          <ul>
+          {/* <ul>
             {product.description.map((d) => {
               return <li key={d}>{d}</li>;
             })}
-          </ul>
+          </ul> */}
+          {product.description}
         </div>
       </div>
     </div>

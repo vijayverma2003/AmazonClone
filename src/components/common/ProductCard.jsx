@@ -16,7 +16,9 @@ function ProductCard({ title, price, listPrice, stock, imageUrl, id }) {
           <Link to={`/product/${id}`} className="product-price">
             ${price}
           </Link>
-          <span className="product-list-price">${listPrice}</span>
+          {listPrice && (
+            <span className="product-list-price">${listPrice}</span>
+          )}
         </div>
         {stock === 0 ? (
           <div className="out-of-stock">Out of Stock</div>

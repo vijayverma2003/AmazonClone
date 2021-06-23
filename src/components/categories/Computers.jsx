@@ -5,7 +5,7 @@ import { Products } from "../../services/fakeProductService";
 function Computers(props) {
   const [products] = useState(Products);
   const filteredProducts = products.filter((product) => {
-    return product.category._id === "c1";
+    return product.category._id === "c1" || "60bca29d41d8b10c8360fac2";
   });
 
   return (

@@ -62,13 +62,6 @@
   color: rgba(255, 255, 255, 0.835);
 }
 
-.navbar-input {
-  width: 33%;
-  height: 3rem;
-  font-size: 1.4rem;
-  padding: 5px;
-}
-
 .nav-buttons {
   height: 50px;
 }
@@ -77,4 +70,26 @@
   .navbar {
     width: 1000px;
   }
+}
+
+/* Input Box */
+
+.nav-input {
+  width: 730px;
+  height: 38px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  outline: 0;
+  padding: 1px 10px;
+}
+
+.search-icon {
+  color: #febd69;
+  font-size: 20px;
+  position: relative;
+  right: 35px;
+}
+
+.search-icon:hover {
+  color: #f3a847;
 }

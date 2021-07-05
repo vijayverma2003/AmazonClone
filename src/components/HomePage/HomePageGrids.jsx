@@ -17,7 +17,10 @@ function HomePageGrids() {
             />
           </div>
           <footer>
-            <Link className="btn btn-link" to="/beauty">
+            <Link
+              className="btn btn-link"
+              to="/category/60e2e226888145080b34ab7a"
+            >
               Shop Now
             </Link>
           </footer>
@@ -33,7 +36,10 @@ function HomePageGrids() {
             />
           </div>
           <footer>
-            <Link className="btn btn-link" to="/tv">
+            <Link
+              className="btn btn-link"
+              to="/category/60e2e75c888145080b34abf6"
+            >
               Shop Now
             </Link>
           </footer>
@@ -49,7 +55,10 @@ function HomePageGrids() {
             />
           </div>
           <footer>
-            <Link className="btn btn-link" to="/computers">
+            <Link
+              className="btn btn-link"
+              to="/category/60e2cca0ee710b041b4b3c3d"
+            >
               Shop Now
             </Link>
           </footer>
@@ -82,7 +91,10 @@ function HomePageGrids() {
             />
           </div>
           <footer>
-            <Link className="btn btn-link" to="/oculus">
+            <Link
+              className="btn btn-link"
+              to="/category/60e2ee9e888145080b34addc"
+            >
               See More
             </Link>
           </footer>
@@ -98,7 +110,10 @@ function HomePageGrids() {
             />
           </div>
           <footer>
-            <Link className="btn btn-link" to="/fitness">
+            <Link
+              className="btn btn-link"
+              to="/category/60e2ebd4888145080b34ad7b"
+            >
               Explore Now
             </Link>
           </footer>
@@ -132,7 +147,10 @@ function HomePageGrids() {
                   alt=""
                 />
                 <div className="link-container">
-                  <Link className="btn btn-link" to="/computers">
+                  <Link
+                    className="btn btn-link"
+                    to="/category/60e2cca0ee710b041b4b3c3d"
+                  >
                     Computer & Accessories
                   </Link>
                 </div>
@@ -144,7 +162,12 @@ function HomePageGrids() {
                   alt=""
                 />
                 <div className="link-container">
-                  <button className="btn btn-link">Video Games</button>
+                  <Link
+                    to="/category/60e2f137888145080b34ae62"
+                    className="btn btn-link"
+                  >
+                    Video Games
+                  </Link>
                 </div>
               </div>
               <div>

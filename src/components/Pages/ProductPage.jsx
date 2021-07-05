@@ -1,22 +1,53 @@
-import React, { useContext } from "react";
-import { getProduct } from "../../services/fakeProductService";
+import React, { useContext, useEffect, useState } from "react";
+import {
+  getProduct,
+  saveProduct,
+  updateProduct,
+} from "../../services/productService";
 import { Link } from "react-router-dom";
 import CartContext from "../../context/CartContext";
 import savings from "../../services/productPage";
 import "../../styles/productsPage.css";
 
 function ProductPage(props) {
-  const productId = props.match.params.id;
-  const product = getProduct(productId);
+  const [product, setProduct] = useState({});
   const { quantity, setQuantity } = useContext(CartContext);
+
+  const fetchData = async () => {
+    const { data } = await getProduct(props.match.params.id);
+    setProduct(data);
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   const savingsInDollars = savings.savingInDollars(product);
   const saving = savings.saving(product);
   const savingInPercentage = savings.savingInPercentage(saving);
 
-  const handleAdd = (product) => {
-    product.quantityInCart++;
+  console.log(product);
+
+  const handleAdd = async (product) => {
+    const updatedProduct = {
+      _id: product._id,
+      categoryId: product.category._id,
+      title: product.title,
+      stock: product.stock,
+      label: product.label,
+      description: product.description,
+      price: product.price,
+      listPrice: product.listPrice,
+      quantityInCart: product.quantityInCart,
+      savedForLater: product.savedForLater,
+      imageUrl: product.imageUrl,
+      inWishList: product.inWishList,
+      by: product.by,
+      tags: product.tags,
+    };
+    updatedProduct.quantityInCart++;
     setQuantity(quantity + 1);
+    await updateProduct(updatedProduct);
   };
 
   return (
@@ -30,46 +61,45 @@ function ProductPage(props) {
       </div>
       <div className="product-page-description">
         <h1>{product.title}</h1>
-        <div className="product-list-price">
-          List Price: ${product.listPrice}
-        </div>
+        {!product.listPrice === 0 && (
+          <div className="product-list-price">
+            List Price: ${product.listPrice}
+          </div>
+        )}
         <span className="product-page-price-text">Price:</span>
         <span className="product-page-price">${product.price}</span>
-        <div>
-          <span className="savings-text">You Save: </span>
-          <span className="product-savings">
-            ${savingsInDollars} ({savingInPercentage}%)
-          </span>
-        </div>
+        {!product.listPrice === 0 && (
+          <div>
+            <span className="savings-text">You Save: </span>
+            <span className="product-savings">
+              ${savingsInDollars} ({savingInPercentage}%)
+            </span>
+          </div>
+        )}
         {product.stock === 0 ? (
           <div className="product-savings">Out of Stock</div>
         ) : null}
-        <Link to="/cart">
-          <button
-            onClick={() => handleAdd(product)}
-            className="btn-secondary"
-            disabled={product.stock > 0 ? false : true}
-          >
-            Add to Cart
-          </button>
-        </Link>
-        <Link to="">
-          <button
-            onClick={() => console.log(product)}
-            className="btn-tertiary"
-            disabled={product.stock > 0 ? false : true}
-          >
-            Buy Now
-          </button>
-        </Link>
-        <div className="product-description-list">
-          {/* <ul>
-            {product.description.map((d) => {
-              return <li key={d}>{d}</li>;
-            })}
-          </ul> */}
-          {product.description}
+        <div>
+          <Link to="/cart">
+            <button
+              onClick={() => handleAdd(product)}
+              className="btn-secondary"
+              disabled={product.stock > 0 ? false : true}
+            >
+              Add to Cart
+            </button>
+          </Link>
+          <Link to="">
+            <button
+              onClick={() => console.log(product)}
+              className="btn-tertiary"
+              disabled={product.stock > 0 ? false : true}
+            >
+              Buy Now
+            </button>
+          </Link>
         </div>
+        <div className="product-description-list">{product.description}</div>
       </div>
     </div>
   );

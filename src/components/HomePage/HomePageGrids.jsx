@@ -73,16 +73,16 @@ function HomePageGrids() {
         </div>
         <div className="card">
           <header className="card-header-primary">
-            <h2 className="bolder">Shop Top Categories</h2>
+            <h2 className="bolder">Oculus</h2>
           </header>
           <div className="card-body-primary">
             <img
-              src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2020/PrimeDay/Fuji_Dash_PD_Nonprime__2x._SY608_CB403084762_.jpgs"
+              src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2021/June/Fuji_Dash_Oculus_2x._SY608_CB667158353_.jpg"
               alt="We ship over 45 Millions prodcuts over the world."
             />
           </div>
           <footer>
-            <Link className="btn btn-link" to="/tv">
+            <Link className="btn btn-link" to="/oculus">
               See More
             </Link>
           </footer>
@@ -98,7 +98,7 @@ function HomePageGrids() {
             />
           </div>
           <footer>
-            <Link className="btn btn-link" to="/tv">
+            <Link className="btn btn-link" to="/fitness">
               Explore Now
             </Link>
           </footer>

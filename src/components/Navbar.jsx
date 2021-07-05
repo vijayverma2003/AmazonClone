@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import CartIcon from "./Cart/CartIcon";
 import { Link } from "react-router-dom";
 import "../styles/navbar.css";
@@ -23,7 +23,6 @@ function Navbar(props) {
             name="query"
             placeholder="Search"
             className="nav-input"
-            type="text"
             onChange={(e) => handleChange(e.currentTarget.value)}
           />
           <Link to={`/search?searchQuery=${searchQuery}`}>

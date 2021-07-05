@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Products } from "../../services/productService";
 import ProductCard from "../common/ProductCard";
 
-function Televisions(props) {
+function Oculus(props) {
   const [products, setProducts] = useState([]);
 
   const fetchData = async () => {
@@ -15,7 +15,7 @@ function Televisions(props) {
   }, []);
 
   const filteredProducts = products.filter((product) => {
-    return product.category.name === "Televisions";
+    return product.category.name === "Oculus";
   });
   return (
     <div>
@@ -36,4 +36,4 @@ function Televisions(props) {
   );
 }
 
-export default Televisions;
+export default Oculus;

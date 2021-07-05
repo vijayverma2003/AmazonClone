@@ -54,7 +54,8 @@
 }
 
 .cart-grid-1x3 {
-  grid-template: repeat(1, auto) / repeat(3, auto);
+  grid-template-rows: repeat(1, auto);
+  grid-template-columns: auto 640px auto;
   column-gap: 4rem;
   margin-top: 3rem;
   height: 180px;

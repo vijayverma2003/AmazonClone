@@ -10,8 +10,6 @@ const savingInPercentage = (saving) => {
   return saving.toFixed(1);
 };
 
-export default {
-  saving,
-  savingInDollars,
-  savingInPercentage,
-};
+let object = { saving, savingInDollars, savingInPercentage };
+
+export default object;

@@ -1,11 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ProductCard from "../common/ProductCard";
-import { Products } from "../../services/fakeProductService";
+import { Products } from "../../services/productService";
 
 function BeautyPicks(props) {
-  const [products] = useState(Products);
+  const [products, setProducts] = useState([]);
+
+  const fetchData = async () => {
+    const { data } = await Products(props.match.params.id);
+    setProducts(data);
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   const filteredProducts = products.filter((product) => {
-    return product.category._id === "c4";
+    return product.category.name === "Beauty";
   });
 
   return (

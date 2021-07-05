@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import "../../styles/cartPage.css";
 
@@ -6,14 +6,22 @@ import CartBody from "./CartBody";
 import CartFooter from "./CartFooter";
 import CartHeader from "./CartHeader";
 import EmptyCart from "./EmptyCart";
-import { Products } from "../../services/fakeProductService";
+import { Products } from "../../services/productService";
 
 function Cart() {
-  const [products] = useState(Products);
+  const [products, setProducts] = useState([]);
   const [cartProducts, setCartProducts] = useState([]);
 
-  let filteredProducts = products.filter((p) => p.quantityInCart > 0);
+  const fetchData = async () => {
+    const { data } = await Products();
+    setProducts(data);
+  };
 
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  let filteredProducts = products.filter((p) => p.quantityInCart > 0);
   let totalPrice = 0;
   let totalQuantity = 0;
 

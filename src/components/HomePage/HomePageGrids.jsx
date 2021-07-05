@@ -1,139 +1,55 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "../../styles/homePageGrids.css";
+import CardPrimary from "../common/CardPrimary";
+import CardSecondary from "../common/CardSecondary";
+import { Link } from "react-router-dom";
 
 function HomePageGrids() {
   return (
     <div className="home-grid">
       <div className="grid grid-2x4">
-        <div className="card">
-          <header className="card-header-primary">
-            <h2 className="bolder">Beauty Picks</h2>
-          </header>
-          <div className="card-body-primary">
-            <img
-              src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Dashboard/Fuji_Dash_Beauty_2x._SY608_CB432774344_.jpg"
-              alt="Beauty Picks"
-            />
-          </div>
-          <footer>
-            <Link
-              className="btn btn-link"
-              to="/category/60e2e226888145080b34ab7a"
-            >
-              Shop Now
-            </Link>
-          </footer>
-        </div>
-        <div className="card">
-          <header className="card-header-primary">
-            <h2 className="bolder">Find your ideal TV</h2>
-          </header>
-          <div className="card-body-primary">
-            <img
-              src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Dashboard/Fuji_Dash_TV_2X._SY608_CB432517900_.jpg"
-              alt="Find your ideal TV"
-            />
-          </div>
-          <footer>
-            <Link
-              className="btn btn-link"
-              to="/category/60e2e75c888145080b34abf6"
-            >
-              Shop Now
-            </Link>
-          </footer>
-        </div>
-        <div className="card">
-          <header className="card-header-primary">
-            <h2 className="bolder">Computer & Accessories</h2>
-          </header>
-          <div className="card-body-primary">
-            <img
-              src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Dashboard/Fuji_Dash_PC_2x._SY608_CB431800964_.jpg"
-              alt="Computer & Accessories"
-            />
-          </div>
-          <footer>
-            <Link
-              className="btn btn-link"
-              to="/category/60e2cca0ee710b041b4b3c3d"
-            >
-              Shop Now
-            </Link>
-          </footer>
-        </div>
-        <div>
-          <div className="card">
-            <header>
-              <h2 className="bolder">Sign in for best Experience</h2>
-            </header>
-            <div className="card-body-primary">
-              <Link to="/login" className="btn btn-primary">
-                Sign in securely
-              </Link>
-            </div>
-          </div>
-          <img
-            className="photo-shipping"
-            src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/October/Fuji_D2_45M_en_US_2x._CB418309979_.jpg"
-            alt=""
-          />
-        </div>
-        <div className="card">
-          <header className="card-header-primary">
-            <h2 className="bolder">Oculus</h2>
-          </header>
-          <div className="card-body-primary">
-            <img
-              src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2021/June/Fuji_Dash_Oculus_2x._SY608_CB667158353_.jpg"
-              alt="We ship over 45 Millions prodcuts over the world."
-            />
-          </div>
-          <footer>
-            <Link
-              className="btn btn-link"
-              to="/category/60e2ee9e888145080b34addc"
-            >
-              See More
-            </Link>
-          </footer>
-        </div>
-        <div className="card">
-          <header className="card-header-primary">
-            <h2 className="bolder">Get fit at home</h2>
-          </header>
-          <div className="card-body-primary">
-            <img
-              src="https://images-na.ssl-images-amazon.com/images/G/01/events/GFAH/GWDesktop_SingleImageCard_fitathome_2x._SY608_CB434924743_.jpg"
-              alt="Get fit at home"
-            />
-          </div>
-          <footer>
-            <Link
-              className="btn btn-link"
-              to="/category/60e2ebd4888145080b34ad7b"
-            >
-              Explore Now
-            </Link>
-          </footer>
-        </div>
-        <div className="card">
-          <header className="card-header-primary">
-            <h2 className="bolder">AmazonBasics</h2>
-          </header>
-          <div className="card-body-primary">
-            <img
-              src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2019/July/amazonbasics_260x260._SY608_CB442725065_.jpg"
-              alt="AmazonBaiscs"
-            />
-          </div>
-          <footer>
-            <Link className="btn btn-link" to="/tv">
-              See More
-            </Link>
-          </footer>
-        </div>
+        <CardPrimary
+          title="Beauty Picks"
+          imageUrl="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Dashboard/Fuji_Dash_Beauty_2x._SY608_CB432774344_.jpg"
+          text="Shop Now"
+          categoryId="60e2e226888145080b34ab7a"
+        />
+        <CardPrimary
+          title="Find your ideal TV"
+          imageUrl="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Dashboard/Fuji_Dash_TV_2X._SY608_CB432517900_.jpg"
+          text="Shop Now"
+          categoryId="60e2e75c888145080b34abf6"
+        />
+        <CardPrimary
+          title="Computer & Accessories"
+          imageUrl="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Dashboard/Fuji_Dash_PC_2x._SY608_CB431800964_.jpg"
+          text="Shop Now"
+          categoryId="60e2cca0ee710b041b4b3c3d"
+        />
+        <CardSecondary
+          title="Sign in for best Experience"
+          imageUrl="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/October/Fuji_D2_45M_en_US_2x._CB418309979_.jpg"
+          to="/login"
+          text="Sign in Securely"
+        />
+        <CardPrimary
+          title="Oculus"
+          imageUrl="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2021/June/Fuji_Dash_Oculus_2x._SY608_CB667158353_.jpg"
+          text="See More"
+          categoryId="60e2ee9e888145080b34addc"
+        />
+        <CardPrimary
+          title="Get fit at home"
+          imageUrl="https://images-na.ssl-images-amazon.com/images/G/01/events/GFAH/GWDesktop_SingleImageCard_fitathome_2x._SY608_CB434924743_.jpg"
+          text="Explore Now"
+          categoryId="60e2ebd4888145080b34ad7b"
+        />
+        <CardPrimary
+          title="AmazonBasics"
+          imageUrl="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2019/July/amazonbasics_260x260._SY608_CB442725065_.jpg"
+          text="See More"
+          categoryId="60e2f85d888145080b34b060"
+        />
         <div className="card">
           <header>
             <h2 className="bolder">Shop by Category</h2>
@@ -177,7 +93,12 @@ function HomePageGrids() {
                   alt=""
                 />
                 <div className="link-container">
-                  <button className="btn btn-link">Baby</button>
+                  <Link
+                    to="/category/60e2f65d888145080b34af93"
+                    className="btn btn-link"
+                  >
+                    Baby
+                  </Link>
                 </div>
               </div>
               <div>
@@ -188,7 +109,12 @@ function HomePageGrids() {
                 />
                 <div className="link-container">
                   <div className="link-container">
-                    <button className="btn btn-link">Toys and Games</button>
+                    <Link
+                      to="/category/60e2f7c5888145080b34afe5"
+                      className="btn btn-link"
+                    >
+                      Toys and Games
+                    </Link>
                   </div>
                 </div>
               </div>

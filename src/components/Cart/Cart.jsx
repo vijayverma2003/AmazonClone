@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import "../../styles/cartPage.css";
 
@@ -7,10 +7,15 @@ import CartFooter from "./CartFooter";
 import CartHeader from "./CartHeader";
 import EmptyCart from "./EmptyCart";
 import { Products } from "../../services/productService";
+import CartContext from "../../context/CartContext";
 
 function Cart() {
   const [products, setProducts] = useState([]);
   const [cartProducts, setCartProducts] = useState([]);
+
+  let filteredProducts = products.filter((p) => p.quantityInCart > 0);
+  let totalPrice = 0;
+  let totalQuantity = 0;
 
   const fetchData = async () => {
     const { data } = await Products();
@@ -20,10 +25,6 @@ function Cart() {
   useEffect(() => {
     fetchData();
   }, []);
-
-  let filteredProducts = products.filter((p) => p.quantityInCart > 0);
-  let totalPrice = 0;
-  let totalQuantity = 0;
 
   const handleCheckBox = (e) => {
     const checkbox = document.getElementById(e._id);

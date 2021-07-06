@@ -1,12 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import CartIcon from "./Cart/CartIcon";
 import { Link } from "react-router-dom";
 import "../styles/navbar.css";
 import "@fortawesome/fontawesome-free/css/all.css";
 import SearchContext from "../context/SearchContext";
+import UserContext from "../context/UserContext";
 
 function Navbar(props) {
   const { searchQuery, setSearchQuery } = useContext(SearchContext);
+  const { user } = useContext(UserContext);
 
   const handleChange = (query) => {
     return setSearchQuery(query);
@@ -30,9 +32,16 @@ function Navbar(props) {
           </Link>
         </span>
         <span className="nav-buttons">
-          <Link className="sign-in" to="/login">
-            Sign In
-          </Link>
+          {!user && (
+            <Link className="sign-in" to="/login">
+              Sign In
+            </Link>
+          )}
+          {user && (
+            <Link className="sign-in" to="/login">
+              {user.name}
+            </Link>
+          )}
           <CartIcon />
         </span>
       </div>

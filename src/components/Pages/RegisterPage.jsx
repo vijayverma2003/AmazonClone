@@ -31,7 +31,7 @@ class RegisterPage extends Form {
       const response = await register(this.state.data);
       const jwt = response.headers["x-auth-token"];
       localStorage.setItem("token", jwt);
-      this.props.history.replace("/");
+      window.location = "/";
     } catch (ex) {
       if (ex.response && ex.response.status === 400) {
         const errors = { ...this.state.errors };

@@ -1,17 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
-import {
-  getProduct,
-  saveProduct,
-  updateProduct,
-} from "../../services/productService";
+import { getProduct, updateProduct } from "../../services/productService";
 import { Link } from "react-router-dom";
 import CartContext from "../../context/CartContext";
 import savings from "../../services/productPage";
 import "../../styles/productsPage.css";
+import UserContext from "../../context/UserContext";
 
 function ProductPage(props) {
   const [product, setProduct] = useState({});
   const { quantity, setQuantity } = useContext(CartContext);
+  const { user } = useContext(UserContext);
 
   const fetchData = async () => {
     const { data } = await getProduct(props.match.params.id);
@@ -78,7 +76,7 @@ function ProductPage(props) {
           <div className="product-savings">Out of Stock</div>
         ) : null}
         <div>
-          <Link to="/cart">
+          <Link to={user ? "/cart" : "/login"}>
             <button
               onClick={() => handleAdd(product)}
               className="btn-secondary"
@@ -87,7 +85,7 @@ function ProductPage(props) {
               Add to Cart
             </button>
           </Link>
-          <Link to="">
+          <Link to={user ? "/checkout" : "/login"}>
             <button
               onClick={() => console.log(product)}
               className="btn-tertiary"

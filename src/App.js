@@ -19,6 +19,7 @@ import SearchContext from "./context/SearchContext";
 import SearchPage from "./components/Pages/SearchPage";
 import UserContext from "./context/UserContext";
 import auth from "./services/authService";
+import ProtectedRoute from "./components/common/ProtectedRoute";
 
 function App() {
   const [quantity, setQuantity] = useState(0);
@@ -38,7 +39,7 @@ function App() {
         <CartContext.Provider value={{ quantity, setQuantity }}>
           <Navbar />
           <Switch>
-            <Route path="/new" component={AddProduct} />
+            <ProtectedRoute path="/new" component={AddProduct} />
             <Route path="/search" component={SearchPage} />
             <Route path="/checkout" component={Checkout} />
             <Route path="/register" component={RegisterPage} />

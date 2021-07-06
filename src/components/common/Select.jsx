@@ -2,11 +2,11 @@ import React from "react";
 
 const Select = ({ name, label, options, error, ...rest }) => {
   return (
-    <div className="form-group">
+    <div>
       <label className="form_label" htmlFor="form_input">
         {label}
       </label>
-      <select name={name} id={name} {...rest} className="form-input">
+      <select name={name} id={name} {...rest} className="form_input">
         <option value="" />
         {options.map((option) => (
           <option key={option._id} value={option._id}>

@@ -7,7 +7,13 @@ function Input({ label, name, error, ...rest }) {
       <label className="form_label" htmlFor="form_input">
         {label}
       </label>
-      <input id={name} name={name} {...rest} className="form_input" />
+      <input
+        autoComplete="off"
+        id={name}
+        name={name}
+        {...rest}
+        className="form_input"
+      />
       {error && (
         <div className="form-alert">
           <i className="alert-icon fas fa-exclamation "></i> {error}

@@ -10,7 +10,7 @@ function CartFooter({ cartProducts, totalPrice, totalQuantity }) {
         ) : (
           <span className="subtotal">
             Subtotal ({totalQuantity} Items) :
-            <span className="subtotal-price"> ${totalPrice} </span>
+            <span className="subtotal-price"> ${totalPrice.toFixed(2)} </span>
           </span>
         )}
       </div>

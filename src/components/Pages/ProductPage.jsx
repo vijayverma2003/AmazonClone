@@ -26,8 +26,6 @@ function ProductPage(props) {
   const saving = savings.saving(product);
   const savingInPercentage = savings.savingInPercentage(saving);
 
-  console.log(product);
-
   const handleAdd = async (product) => {
     const updatedProduct = {
       _id: product._id,
@@ -61,14 +59,14 @@ function ProductPage(props) {
       </div>
       <div className="product-page-description">
         <h1>{product.title}</h1>
-        {!product.listPrice === 0 && (
+        {product.listPrice !== 0 && (
           <div className="product-list-price">
             List Price: ${product.listPrice}
           </div>
         )}
         <span className="product-page-price-text">Price:</span>
         <span className="product-page-price">${product.price}</span>
-        {!product.listPrice === 0 && (
+        {product.listPrice !== 0 && (
           <div>
             <span className="savings-text">You Save: </span>
             <span className="product-savings">

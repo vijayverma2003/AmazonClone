@@ -25,7 +25,7 @@ function CartProduct({ product, onCheckChange }) {
             )}
             <div className="quantity">Quantity: {product.quantityInCart}</div>
           </div>
-          <div className="cart-price">${totalPrice}</div>
+          <div className="cart-price">${totalPrice.toFixed(2)}</div>
         </div>
       </label>
     </div>

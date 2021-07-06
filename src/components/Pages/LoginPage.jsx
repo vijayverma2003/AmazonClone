@@ -28,8 +28,7 @@ class LoginPage extends Form {
   doSubmit = async () => {
     try {
       const { data } = this.state;
-      const { data: jwt } = await login(data.email, data.password);
-      localStorage.setItem("token", jwt);
+      await login(data.email, data.password);
       window.location = "/";
     } catch (ex) {
       if (ex.response && ex.response.status === 400) {

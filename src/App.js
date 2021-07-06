@@ -11,7 +11,6 @@ import CartContext from "./context/CartContext";
 import Categories from "./components/Pages/Categories";
 import Checkout from "./components/Pages/Checkout";
 import HomePage from "./components/HomePage/HomePage";
-import jwtDecode from "jwt-decode";
 import LoginPage from "./components/Pages/LoginPage";
 import Navbar from "./components/Navbar";
 import ProductPage from "./components/Pages/ProductPage";
@@ -19,6 +18,7 @@ import RegisterPage from "./components/Pages/RegisterPage";
 import SearchContext from "./context/SearchContext";
 import SearchPage from "./components/Pages/SearchPage";
 import UserContext from "./context/UserContext";
+import auth from "./services/authService";
 
 function App() {
   const [quantity, setQuantity] = useState(0);
@@ -26,10 +26,8 @@ function App() {
   const [user, setUser] = useState();
 
   useEffect(() => {
-    try {
-      const jwt = localStorage.getItem("token");
-      setUser(jwtDecode(jwt));
-    } catch (error) {}
+    const user = auth.getCurrentUser();
+    setUser(user);
   }, []);
 
   Bugsnag.notify("Test error message");

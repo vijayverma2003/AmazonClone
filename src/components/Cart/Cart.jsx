@@ -7,7 +7,6 @@ import CartFooter from "./CartFooter";
 import CartHeader from "./CartHeader";
 import EmptyCart from "./EmptyCart";
 import { Products } from "../../services/productService";
-import CartContext from "../../context/CartContext";
 
 function Cart() {
   const [products, setProducts] = useState([]);

@@ -3,6 +3,7 @@ import Joi from "joi-browser";
 import Form from "../common/Form";
 import "../../styles/forms.css";
 import { register } from "../../services/userService";
+import auth from "../../services/authService";
 
 class RegisterPage extends Form {
   state = {
@@ -29,8 +30,7 @@ class RegisterPage extends Form {
   doSubmit = async () => {
     try {
       const response = await register(this.state.data);
-      const jwt = response.headers["x-auth-token"];
-      localStorage.setItem("token", jwt);
+      auth.loginWithJwt(response.headers["x-auth-token"]);
       window.location = "/";
     } catch (ex) {
       if (ex.response && ex.response.status === 400) {

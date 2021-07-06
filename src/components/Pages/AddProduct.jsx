@@ -64,7 +64,7 @@ class AddProduct extends Form {
             {this.renderInput("stock", "Stock")}
             {this.renderInput("description", "Description")}
             {this.renderInput("by", "Brand")}
-            {this.renderButton("Save")}
+            {this.renderButton("Save", "form_button form_button-small")}
           </form>
         </div>
       </div>

@@ -38,7 +38,6 @@ class Form extends Component {
     this.doSubmit();
   };
 
-  // handleChange = (e) => {
   handleChange = ({ currentTarget: input }) => {
     const errors = { ...this.state.errors };
     const errorMessage = this.validateProperty(input);
@@ -50,12 +49,12 @@ class Form extends Component {
     this.setState({ data, errors });
   };
 
-  renderButton(label) {
+  renderButton(label, className = "form_button") {
     return (
       <button
         disabled={this.validate()}
         onClick={this.handleSubmit}
-        className="form_button "
+        className={className}
       >
         {label}
       </button>

@@ -158,6 +158,10 @@ p {
   width: 100%;
 }
 
+.btn-small {
+  width: 15rem;
+}
+
 /* Links */
 
 .link-container {

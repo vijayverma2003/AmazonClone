@@ -1,0 +1,19 @@
+.profile {
+  padding: 4rem;
+  margin: 4rem auto;
+  width: 1024px;
+}
+
+.profile-heading {
+  font-size: 3rem;
+  font-weight: 500;
+  height: 6rem;
+  border-bottom: 1px solid black;
+  margin-bottom: 2rem;
+}
+
+.profile-hello {
+  font-size: 1.8rem;
+  color: #f08804;
+  font-weight: 600;
+}

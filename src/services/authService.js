@@ -16,6 +16,7 @@ export function loginWithJwt(jwt) {
 
 export function logout() {
   localStorage.removeItem(tokenKey);
+  window.location = "/login";
 }
 
 export function getCurrentUser() {

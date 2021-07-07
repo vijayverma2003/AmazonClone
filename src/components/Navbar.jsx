@@ -33,7 +33,9 @@ function Navbar(props) {
           </Link>
         </span>
         <span className="nav-buttons">
-          <UserNavbar name={user ? user.name : "Sign In"} />
+          <Link to="/profile">
+            <UserNavbar name={user ? user.name : "Sign In"} />
+          </Link>
           <CartIcon />
         </span>
       </div>

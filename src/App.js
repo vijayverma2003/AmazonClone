@@ -21,6 +21,7 @@ import UserContext from "./context/UserContext";
 import auth from "./services/authService";
 import ProtectedRoute from "./components/common/ProtectedRoute";
 import { getCartProducts } from "./services/cartService";
+import Profile from "./components/Pages/Profile";
 
 function App() {
   const [quantity, setQuantity] = useState(0);
@@ -53,6 +54,7 @@ function App() {
           <Switch>
             <ProtectedRoute path="/new" component={AddProduct} />
             <ProtectedRoute path="/cart" component={Cart} />
+            <ProtectedRoute path="/profile" component={Profile} />
             <Route path="/search" component={SearchPage} />
             <Route path="/checkout" component={Checkout} />
             <Route path="/register" component={RegisterPage} />

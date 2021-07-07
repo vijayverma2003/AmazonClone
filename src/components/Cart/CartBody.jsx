@@ -4,11 +4,11 @@ import CartProduct from "./CartProduct";
 function CartBody({ products, onCheckChange }) {
   return (
     <div>
-      {products.map((product) => {
+      {products.map((cartProduct) => {
         return (
           <CartProduct
-            key={product._id}
-            product={product}
+            key={cartProduct._id}
+            cartProduct={cartProduct}
             onCheckChange={onCheckChange}
           />
         );

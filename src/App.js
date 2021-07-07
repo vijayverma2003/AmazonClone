@@ -40,11 +40,11 @@ function App() {
           <Navbar />
           <Switch>
             <ProtectedRoute path="/new" component={AddProduct} />
+            <ProtectedRoute path="/cart" component={Cart} />
             <Route path="/search" component={SearchPage} />
             <Route path="/checkout" component={Checkout} />
             <Route path="/register" component={RegisterPage} />
             <Route path="/login" component={LoginPage} />
-            <Route path="/cart" component={Cart} />
             <Route path="/product/:id" component={ProductPage} />
             <Route path="/category/:id" component={Categories} />
             <Route exact path="/" component={HomePage} />

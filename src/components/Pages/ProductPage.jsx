@@ -5,6 +5,7 @@ import CartContext from "../../context/CartContext";
 import savings from "../../services/productPage";
 import "../../styles/productsPage.css";
 import UserContext from "../../context/UserContext";
+import { updateCartProduct, saveCartProduct } from "../../services/cartService";
 
 function ProductPage(props) {
   const [product, setProduct] = useState({});
@@ -25,25 +26,16 @@ function ProductPage(props) {
   const savingInPercentage = savings.savingInPercentage(saving);
 
   const handleAdd = async (product) => {
-    const updatedProduct = {
-      _id: product._id,
-      categoryId: product.category._id,
-      title: product.title,
-      stock: product.stock,
-      label: product.label,
-      description: product.description,
-      price: product.price,
-      listPrice: product.listPrice,
-      quantityInCart: product.quantityInCart,
-      savedForLater: product.savedForLater,
-      imageUrl: product.imageUrl,
-      inWishList: product.inWishList,
-      by: product.by,
-      tags: product.tags,
+    if (!user) window.location = "/login";
+
+    const updatedCartProduct = {
+      productId: product._id,
+      userId: user._id,
     };
-    updatedProduct.quantityInCart++;
-    setQuantity(quantity + 1);
-    await updateProduct(updatedProduct);
+
+    await updateCartProduct(updatedCartProduct);
+
+    window.location = "/cart";
   };
 
   return (
@@ -76,15 +68,13 @@ function ProductPage(props) {
           <div className="product-savings">Out of Stock</div>
         ) : null}
         <div>
-          <Link to={user ? "/cart" : "/login"}>
-            <button
-              onClick={() => handleAdd(product)}
-              className="btn-secondary"
-              disabled={product.stock > 0 ? false : true}
-            >
-              Add to Cart
-            </button>
-          </Link>
+          <button
+            onClick={() => handleAdd(product)}
+            className="btn-secondary"
+            disabled={product.stock > 0 ? false : true}
+          >
+            Add to Cart
+          </button>
           <Link to={user ? "/checkout" : "/login"}>
             <button
               onClick={() => console.log(product)}

@@ -7,18 +7,22 @@ import CartFooter from "./CartFooter";
 import CartHeader from "./CartHeader";
 import EmptyCart from "./EmptyCart";
 import { Products } from "../../services/productService";
+import { getCartProducts } from "../../services/cartService";
+import { getCurrentUser } from "../../services/authService";
 
 function Cart() {
   const [products, setProducts] = useState([]);
   const [cartProducts, setCartProducts] = useState([]);
 
-  let filteredProducts = products.filter((p) => p.quantityInCart > 0);
   let totalPrice = 0;
   let totalQuantity = 0;
 
   const fetchData = async () => {
-    const { data } = await Products();
-    setProducts(data);
+    const { data: products } = await getCartProducts();
+    const filteredProducts = products.filter(
+      (p) => p.user._id === getCurrentUser()._id
+    );
+    setProducts(filteredProducts);
   };
 
   useEffect(() => {
@@ -38,17 +42,17 @@ function Cart() {
     }
   };
 
-  cartProducts.map((product) => {
-    totalPrice += product.price * product.quantityInCart;
+  cartProducts.map((cartProduct) => {
+    totalPrice += cartProduct.product.price * cartProduct.quantity;
     return totalPrice;
   });
 
   cartProducts.map((product) => {
-    totalQuantity += product.quantityInCart;
+    totalQuantity += product.quantity;
     return totalQuantity;
   });
 
-  if (filteredProducts.length === 0) {
+  if (products.length === 0) {
     return <EmptyCart />;
   }
 
@@ -56,7 +60,7 @@ function Cart() {
     <div className="cart">
       <div className="cart-box">
         <CartHeader />
-        <CartBody products={filteredProducts} onCheckChange={handleCheckBox} />
+        <CartBody products={products} onCheckChange={handleCheckBox} />
         <CartFooter
           cartProducts={cartProducts}
           totalPrice={totalPrice}

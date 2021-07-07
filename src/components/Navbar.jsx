@@ -5,6 +5,7 @@ import "../styles/navbar.css";
 import "@fortawesome/fontawesome-free/css/all.css";
 import SearchContext from "../context/SearchContext";
 import UserContext from "../context/UserContext";
+import UserNavbar from "./common/UserNavbar";
 
 function Navbar(props) {
   const { searchQuery, setSearchQuery } = useContext(SearchContext);
@@ -32,16 +33,7 @@ function Navbar(props) {
           </Link>
         </span>
         <span className="nav-buttons">
-          {!user && (
-            <Link className="sign-in" to="/login">
-              Sign In
-            </Link>
-          )}
-          {user && (
-            <Link className="sign-in" to="/login">
-              {user.name}
-            </Link>
-          )}
+          <UserNavbar name={user ? user.name : "Sign In"} />
           <CartIcon />
         </span>
       </div>

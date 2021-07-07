@@ -6,7 +6,6 @@ import CartBody from "./CartBody";
 import CartFooter from "./CartFooter";
 import CartHeader from "./CartHeader";
 import EmptyCart from "./EmptyCart";
-import { Products } from "../../services/productService";
 import { getCartProducts } from "../../services/cartService";
 import { getCurrentUser } from "../../services/authService";
 

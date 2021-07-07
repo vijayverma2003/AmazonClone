@@ -22,9 +22,8 @@
 .shopping-cart {
   height: 50px;
   width: 84px;
-  /* margin-bottom: 15px; */
   display: inline-block;
-  margin-right: 20px;
+  margin-right: 50px;
   border: 1px solid var(--color-primary);
   padding-bottom: 5px;
 }

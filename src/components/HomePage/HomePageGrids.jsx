@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../../styles/homePageGrids.css";
 import CardPrimary from "../common/CardPrimary";
 import CardSecondary from "../common/CardSecondary";
 import { Link } from "react-router-dom";
+import UserContext from "../../context/UserContext";
 
 function HomePageGrids() {
+  const { user } = useContext(UserContext);
   return (
     <div className="home-grid">
       <div className="grid grid-2x4">
@@ -26,12 +28,22 @@ function HomePageGrids() {
           text="Shop Now"
           categoryId="60e2cca0ee710b041b4b3c3d"
         />
-        <CardSecondary
-          title="Sign in for best Experience"
-          imageUrl="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/October/Fuji_D2_45M_en_US_2x._CB418309979_.jpg"
-          to="/login"
-          text="Sign in Securely"
-        />
+        {!user && (
+          <CardSecondary
+            title="Sign in for best Experience"
+            imageUrl="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/October/Fuji_D2_45M_en_US_2x._CB418309979_.jpg"
+            to="/login"
+            text="Sign in Securely"
+          />
+        )}
+        {user && (
+          <CardPrimary
+            title="Computers and Tablets"
+            imageUrl="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Dashboard/Fuji_Dash_Laptops_758x608_2X_en_US._SY608_CB418608386_.jpg"
+            text="See More"
+            categoryId="60e2cca0ee710b041b4b3c3d"
+          />
+        )}
         <CardPrimary
           title="Oculus"
           imageUrl="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2021/June/Fuji_Dash_Oculus_2x._SY608_CB667158353_.jpg"

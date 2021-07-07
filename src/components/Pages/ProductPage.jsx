@@ -1,11 +1,14 @@
-import React, { useContext, useEffect, useState } from "react";
-import { getProduct, updateProduct } from "../../services/productService";
-import { Link } from "react-router-dom";
-import CartContext from "../../context/CartContext";
-import savings from "../../services/productPage";
 import "../../styles/productsPage.css";
+
+import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
+import CartContext from "../../context/CartContext";
 import UserContext from "../../context/UserContext";
-import { updateCartProduct, saveCartProduct } from "../../services/cartService";
+
+import { updateCartProduct } from "../../services/cartService";
+import { getProduct } from "../../services/productService";
+import savings from "../../services/productPage";
 
 function ProductPage(props) {
   const [product, setProduct] = useState({});
@@ -32,7 +35,6 @@ function ProductPage(props) {
       productId: product._id,
       userId: user._id,
     };
-
     await updateCartProduct(updatedCartProduct);
 
     window.location = "/cart";

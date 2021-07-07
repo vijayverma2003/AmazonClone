@@ -20,15 +20,27 @@ import SearchPage from "./components/Pages/SearchPage";
 import UserContext from "./context/UserContext";
 import auth from "./services/authService";
 import ProtectedRoute from "./components/common/ProtectedRoute";
+import { getCartProducts } from "./services/cartService";
 
 function App() {
   const [quantity, setQuantity] = useState(0);
   const [searchQuery, setSearchQuery] = useState("");
   const [user, setUser] = useState();
 
+  const fetchData = async () => {
+    const { data: products } = await getCartProducts();
+    const filteredProducts = products.filter(
+      (p) => p.user._id === auth.getCurrentUser()._id
+    );
+    let totalQuantity = 0;
+    filteredProducts.forEach((p) => (totalQuantity += p.quantity));
+    setQuantity(totalQuantity);
+  };
+
   useEffect(() => {
     const user = auth.getCurrentUser();
     setUser(user);
+    fetchData();
   }, []);
 
   Bugsnag.notify("Test error message");

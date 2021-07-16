@@ -15,8 +15,6 @@ function SearchPage(props) {
     fetchData();
   }, []);
 
-  console.log(products);
-
   const query = queryString.parse(props.location.search);
   const queryList = query.searchQuery
     .toLowerCase()
@@ -25,19 +23,15 @@ function SearchPage(props) {
       return q.trim() !== "";
     });
 
-  console.log(queryList);
-
-  const p = products.filter((p) => {
+  const filteredProducts = products.filter((p) => {
     for (let key in queryList) {
       return p.tags.includes(queryList[key]);
     }
   });
 
-  console.log(p);
-
   return (
     <div>
-      {p.map((product) => {
+      {filteredProducts.map((product) => {
         return (
           <ProductCard
             key={product._id}

@@ -10,10 +10,6 @@ export async function login(email, password) {
   localStorage.setItem(tokenKey, jwt);
 }
 
-export function loginWithJwt(jwt) {
-  localStorage.setItem(jwt);
-}
-
 export function logout() {
   localStorage.removeItem(tokenKey);
   window.location = "/login";
@@ -34,4 +30,4 @@ export function getJwt() {
 
 setJwt(getJwt());
 
-export default { login, logout, getCurrentUser, loginWithJwt, getJwt };
+export default { login, logout, getCurrentUser, getJwt };

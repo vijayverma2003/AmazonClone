@@ -34,10 +34,7 @@ class LoginPage extends Form {
     zipCode: Joi.string().required().min(5).max(6).label("ZIP Code"),
   };
 
-  doSubmit = () => {
-    // Call the server
-    console.log("Submitted");
-  };
+  doSubmit = () => {};
 
   render() {
     return (

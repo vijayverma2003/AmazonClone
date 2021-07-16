@@ -30,12 +30,14 @@ function App() {
 
   const fetchData = async () => {
     const { data: products } = await getCartProducts();
-    const filteredProducts = products.filter(
-      (p) => p.user._id === auth.getCurrentUser()._id
-    );
-    let totalQuantity = 0;
-    filteredProducts.forEach((p) => (totalQuantity += p.quantity));
-    setQuantity(totalQuantity);
+    if (user) {
+      const filteredProducts = products.filter(
+        (p) => p.user._id === auth.getCurrentUser()._id
+      );
+      let totalQuantity = 0;
+      filteredProducts.forEach((p) => (totalQuantity += p.quantity));
+      setQuantity(totalQuantity);
+    }
   };
 
   useEffect(() => {
@@ -43,8 +45,6 @@ function App() {
     setUser(user);
     fetchData();
   }, []);
-
-  Bugsnag.notify("Test error message");
 
   return (
     <UserContext.Provider value={{ user }}>
@@ -57,8 +57,8 @@ function App() {
             <ProtectedRoute path="/profile" component={Profile} />
             <Route path="/search" component={SearchPage} />
             <Route path="/checkout" component={Checkout} />
-            <Route path="/register" component={RegisterPage} />
             <Route path="/login" component={LoginPage} />
+            <Route path="/register" component={RegisterPage} />
             <Route path="/product/:id" component={ProductPage} />
             <Route path="/category/:id" component={Categories} />
             <Route exact path="/" component={HomePage} />

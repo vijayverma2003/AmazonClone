@@ -4,6 +4,7 @@ import CartContext from "../../context/CartContext";
 
 function CartIcon() {
   const { quantity } = useContext(CartContext);
+
   return (
     <Link to="/cart" className="shopping-cart">
       <span className="cart-icon"></span>

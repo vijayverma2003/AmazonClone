@@ -28,14 +28,6 @@ function HomePageGrids() {
           text="Shop Now"
           categoryId="60e2cca0ee710b041b4b3c3d"
         />
-        {!user && (
-          <CardSecondary
-            title="Sign in for best Experience"
-            imageUrl="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/October/Fuji_D2_45M_en_US_2x._CB418309979_.jpg"
-            to="/login"
-            text="Sign in Securely"
-          />
-        )}
         {user && (
           <CardPrimary
             title="Computers and Tablets"
@@ -62,6 +54,14 @@ function HomePageGrids() {
           text="See More"
           categoryId="60e2f85d888145080b34b060"
         />
+        {!user && (
+          <CardSecondary
+            title="Sign in for best Experience"
+            imageUrl="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/October/Fuji_D2_45M_en_US_2x._CB418309979_.jpg"
+            to="/login"
+            text="Sign in Securely"
+          />
+        )}
         <div className="card">
           <header>
             <h2 className="bolder">Shop by Category</h2>

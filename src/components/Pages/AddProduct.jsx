@@ -49,7 +49,6 @@ class AddProduct extends Form {
   };
 
   render() {
-    console.log(this.state.categories);
     return (
       <div className="checkout-page">
         <div>

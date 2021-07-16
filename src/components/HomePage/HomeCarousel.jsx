@@ -11,7 +11,7 @@ function Carousel() {
   const [slides] = useState(document.getElementsByClassName("slide"));
 
   useEffect(() => {
-    var i;
+    let i;
     let slidesCount = slides.length;
 
     for (i = 0; i < slidesCount; i++) {
@@ -24,13 +24,14 @@ function Carousel() {
     slides[currentSlide - 1].style.display = "block";
   });
 
-  function handleNext() {
-    setCurrentSlide(currentSlide + 1);
-  }
-
-  function handlePrevious() {
-    setCurrentSlide(currentSlide - 1);
-  }
+  const carousel = {
+    handleNext() {
+      setCurrentSlide(currentSlide + 1);
+    },
+    handlePrevious() {
+      setCurrentSlide(currentSlide - 1);
+    },
+  };
 
   return (
     <div className="app">
@@ -41,8 +42,14 @@ function Carousel() {
           </button>
         ))}
       </div>
-      <i onClick={handlePrevious} className="fas fa-chevron-left previous"></i>
-      <i onClick={handleNext} className="fas fa-chevron-right next"></i>
+      <i
+        onClick={carousel.handlePrevious}
+        className="fas fa-chevron-left previous"
+      ></i>
+      <i
+        onClick={carousel.handleNext}
+        className="fas fa-chevron-right next"
+      ></i>
     </div>
   );
 }

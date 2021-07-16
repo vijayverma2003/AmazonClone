@@ -7,19 +7,20 @@ function Categories(props) {
 
   const fetchData = async () => {
     const { data } = await Products();
-    setProducts(data);
+
+    const filteredProducts = data.filter((product) => {
+      return product.category._id === props.match.params.id;
+    });
+    setProducts(filteredProducts);
   };
 
   useEffect(() => {
     fetchData();
   }, []);
 
-  const filteredProducts = products.filter((product) => {
-    return product.category._id === props.match.params.id;
-  });
   return (
     <div>
-      {filteredProducts.map((product) => {
+      {products.map((product) => {
         return (
           <ProductCard
             key={product._id}

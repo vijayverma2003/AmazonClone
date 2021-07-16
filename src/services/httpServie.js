@@ -1,6 +1,5 @@
 import Bugsnag from "@bugsnag/js";
 import axios from "axios";
-import auth from "./authService";
 
 axios.interceptors.response.use(null, (error) => {
   const expectedError =

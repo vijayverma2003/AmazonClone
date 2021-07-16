@@ -3,16 +3,12 @@ import "../../styles/productsPage.css";
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import CartContext from "../../context/CartContext";
 import UserContext from "../../context/UserContext";
-
 import { updateCartProduct } from "../../services/cartService";
 import { getProduct } from "../../services/productService";
-import savings from "../../services/productPage";
 
 function ProductPage(props) {
   const [product, setProduct] = useState({});
-  const { quantity, setQuantity } = useContext(CartContext);
   const { user } = useContext(UserContext);
 
   const fetchData = async () => {
@@ -24,9 +20,17 @@ function ProductPage(props) {
     fetchData();
   }, []);
 
-  const savingsInDollars = savings.savingInDollars(product);
-  const saving = savings.saving(product);
-  const savingInPercentage = savings.savingInPercentage(saving);
+  const getSavings = (product) => {
+    return {
+      savingInDollars: (product.listPrice - product.price).toFixed(2),
+      savingInPercentage: (
+        ((product.listPrice - product.price) * 100) /
+        product.listPrice
+      ).toFixed(1),
+    };
+  };
+
+  const savings = getSavings(product);
 
   const handleAdd = async (product) => {
     if (!user) window.location = "/login";
@@ -62,7 +66,8 @@ function ProductPage(props) {
           <div>
             <span className="savings-text">You Save: </span>
             <span className="product-savings">
-              ${savingsInDollars} ({savingInPercentage}%)
+              ${savings.savingInDollars} ({savings.savingInPercentage}
+              %)
             </span>
           </div>
         )}

@@ -1,9 +1,11 @@
 import React from "react";
 import Joi from "joi-browser";
-import Form from "../common/Form";
+import { Link, Redirect } from "react-router-dom";
+
 import "../../styles/forms.css";
-import authService, { login } from "../../services/authService";
-import { Redirect } from "react-router";
+
+import authService from "../../services/authService";
+import Form from "../common/Form";
 
 class LoginPage extends Form {
   state = {
@@ -29,7 +31,7 @@ class LoginPage extends Form {
   doSubmit = async () => {
     try {
       const { data } = this.state;
-      await login(data.email, data.password);
+      await authService.login(data.email, data.password);
 
       const { state } = this.props.location;
 
@@ -54,6 +56,9 @@ class LoginPage extends Form {
             {this.renderInput("email", "Email Address")}
             {this.renderInput("password", "Password", "password")}
             {this.renderButton("Sign In")}
+            <div className="new-to-amazon">
+              <Link to="/register">New to Amazon? Register Now</Link>
+            </div>
           </form>
         </div>
       </div>

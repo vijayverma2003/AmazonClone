@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
-
+import React, { useEffect, useState } from "react";
 import "../../styles/cartPage.css";
 
 import CartBody from "./CartBody";
@@ -12,9 +11,6 @@ import { getCurrentUser } from "../../services/authService";
 function Cart() {
   const [products, setProducts] = useState([]);
   const [cartProducts, setCartProducts] = useState([]);
-
-  let totalPrice = 0;
-  let totalQuantity = 0;
 
   const fetchData = async () => {
     const { data: products } = await getCartProducts();
@@ -41,15 +37,16 @@ function Cart() {
     }
   };
 
-  cartProducts.map((cartProduct) => {
-    totalPrice += cartProduct.product.price * cartProduct.quantity;
-    return totalPrice;
-  });
+  const totalPrice = cartProducts.reduce(
+    (totalPrice, cartProduct) =>
+      (totalPrice += cartProduct.product.price * cartProduct.quantity),
+    0
+  );
 
-  cartProducts.map((product) => {
-    totalQuantity += product.quantity;
-    return totalQuantity;
-  });
+  const totalQuantity = cartProducts.reduce(
+    (totalQuantity, product) => (totalQuantity += product.quantity),
+    0
+  );
 
   if (products.length === 0) {
     return <EmptyCart />;
